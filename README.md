@@ -1,4 +1,4 @@
-<p align="center"><img width="400" src="https://photos.smugmug.com/photos/i-VKnSVxZ/0/X2/i-VKnSVxZ-X2.png"></p>
+<p align="center"><img height="170" src="https://photos.smugmug.com/photos/i-VKnSVxZ/0/X2/i-VKnSVxZ-X2.png"></p>
 
 # Installation
 
