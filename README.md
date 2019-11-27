@@ -18,6 +18,10 @@ Vous pouvez maintenant lancer le site web avec la commande ``php artisan serve``
 
 ## Installation de la base de donnée
 
-Modifier les informations de votre base de donnée dans le fichier ``.env``. (*Vous devez avoir au préalable avoir créer votre base de donnée*)
+Modifier les informations de votre base de donnée dans le fichier ``.env``. (*Vous devez avoir au préalable avoir votre base de donnée*)
 
 Lorsque la base de donnée est configuré, lancer la commande ``php artisan migrate`` pour créer les tables.
+
+## Configuration pour les assets
+
+Lancer la commande ``php artisan storage:link`` pour créer un lien symbolique entre les assets et le dossier public.

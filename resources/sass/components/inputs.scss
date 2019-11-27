@@ -1,0 +1,17 @@
+/**
+* Input
+*
+ */
+
+.form-label {
+    @apply text-gray-600;
+}
+.form-control {
+    @apply border border-gray-300 rounded py-2 px-4 my-2 block w-full appearance-none leading-normal text-gray-700;
+}
+.form-control:focus {
+    @apply border-blue-500;
+}
+.custom-label .form-control:checked + svg {
+    display: block !important;
+}

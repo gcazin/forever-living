@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+
+Route::get('/', 'HomeController@index')->name('index');
+
+Route::get('/lang/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+})->name('lang');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
