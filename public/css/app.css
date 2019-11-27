@@ -11401,6 +11401,168 @@ video {
   z-index: auto;
 }
 
+/**
+* Input
+*
+ */
+
+.form-label {
+  color: #718096;
+}
+
+.form-control {
+  border-width: 1px;
+  border-color: #e2e8f0;
+  border-radius: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+.form-control:focus {
+  border-color: #4299e1;
+}
+
+.custom-label .form-control:checked + svg {
+  display: block !important;
+}
+
+/**
+* Buttons
+*
+ */
+
+.btn {
+  font-weight: 700;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
+  border-style: solid;
+  display: inline-block;
+  font-size: 13px;
+  padding: 10px 16px;
+}
+
+.btn-primary {
+  background-color: #ecc94b;
+  color: #000;
+}
+
+.btn-blue {
+  background-color: #63b3ed;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background-color: #3182ce;
+}
+
+.btn-red {
+  background-color: #f56565;
+  color: #fff;
+}
+
+.btn-red:hover {
+  background-color: #c53030;
+}
+
+.btn-green {
+  background-color: #48bb78;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background-color: #2f855a;
+}
+
+.btn-light {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e8f0;
+}
+
+.btn-light:hover {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: #f7fafc;
+}
+
+/**
+* Outline buttons
+ */
+
+*[class*=btn-outline] {
+  background-color: transparent;
+  border-width: 1px;
+  box-shadow: none;
+}
+
+*[class*=btn-outline]:hover {
+  color: #fff;
+}
+
+.btn-outline-blue {
+  border-color: #4299e1;
+  color: #4299e1;
+}
+
+.btn-outline-blue:hover {
+  background-color: #4299e1;
+}
+
+.btn-outline-red {
+  border-color: #f56565;
+  color: #f56565;
+}
+
+.btn-outline-red:hover {
+  background-color: #f56565;
+}
+
+.btn-outline-green {
+  border-color: #48bb78;
+  color: #48bb78;
+}
+
+.btn-outline-green:hover {
+  background-color: #48bb78;
+}
+
+.btn-initial {
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.btn-sm {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+
+.btn-xl {
+  font-size: 16px;
+  padding: 12px 16px;
+}
+
+.btn-2xl {
+  font-size: 30px;
+  padding: 15px 30px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
 @media (min-width: 640px){
   .sm\:sr-only{
     position: absolute;
