@@ -3,6 +3,10 @@
 *
  */
 
+:root {
+    --color-primary: #ffcb27;
+}
+
 .btn {
     // shadow
     @apply font-bold rounded-full border border-transparent border-solid inline-block;
@@ -11,7 +15,8 @@
 }
 
 .btn-primary {
-    @apply bg-yellow-500 text-black;
+    @apply text-gray-800;
+    background: var(--color-primary);
 }
 
 .btn-blue {

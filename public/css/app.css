@@ -11442,6 +11442,10 @@ video {
 *
  */
 
+:root {
+  --color-primary: #ffcb27;
+}
+
 .btn {
   font-weight: 700;
   border-radius: 9999px;
@@ -11454,8 +11458,8 @@ video {
 }
 
 .btn-primary {
-  background-color: #ecc94b;
-  color: #000;
+  color: #2d3748;
+  background: var(--color-primary);
 }
 
 .btn-blue {
@@ -11561,6 +11565,22 @@ video {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.first__section::after, #card::after {
+  display: -webkit-box;
+  display: flex;
+  background: url(../storage/images/wave-1.svg);
+  background-size: auto;
+  background-position-y: 24vw;
+  background-size: cover;
+}
+
+.first__section::before, .first__section::after, #card::after {
+  content: "";
+  height: 12vw;
+  width: 100%;
+  position: absolute;
 }
 
 @media (min-width: 640px){

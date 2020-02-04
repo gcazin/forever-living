@@ -22,6 +22,7 @@ import Card from './components/Card.vue';
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('card',require('./components/Card.vue').default);
+Vue.component('modal', require('./components/Modal').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

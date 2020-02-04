@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', function() {
+    return view('index');
+})->name('index');
 
 Route::get('/lang/{locale}', function ($locale){
     Session::put('locale', $locale);

@@ -1,4 +1,4 @@
-<nav class="bg-white shadow" role="navigation">
+<nav class="" role="navigation">
     <div class="w-10/12 mx-auto py-4 flex flex-wrap items-center md:flex-no-wrap">
         <div class="">
             <a href="{{ route('index') }}" rel="home">
@@ -18,13 +18,17 @@
                 <li>
                     <a href="#" class="btn btn-primary">MyAllonsY</a>
                 </li>
-                <li>
-                    <select name="lang" class="lang form-control" onchange="location = 'lang/' + this.value">
-                        <option value="en" onclick="redirec">Français</option>
-                        <option value="fr" onclick="redirec">Anglais</option>
-                        <option value="ar" onclick="redirec">Arabe</option>
-                    </select>
-                </li>
+                {{--<li>
+                    <button id="show-modal" @click="showModal = true">Show Modal</button>
+                    <!-- use the modal component, pass in the prop -->
+                    <modal v-if="showModal" @close="showModal = false">
+                        <!--
+                          you can use custom content here to overwrite
+                          default content
+                        -->
+                        <h3 slot="header">custom header</h3>
+                    </modal>
+                </li>--}}
             </ul>
         </div>
     </div>
