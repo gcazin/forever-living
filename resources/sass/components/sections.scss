@@ -1,0 +1,14 @@
+.first__section::after, #card::after {
+    display: flex;
+    background: url(../storage/images/wave-1.svg);
+    background-size: auto;
+    background-position-y: 24vw;
+    background-size: cover;
+}
+
+.first__section::before, .first__section::after, #card::after {
+    content: '';
+    height: 12vw;
+    width: 100%;
+    position: absolute;
+}

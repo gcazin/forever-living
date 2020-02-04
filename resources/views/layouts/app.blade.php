@@ -19,11 +19,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100">
 <div id="app">
     @include('components.nav')
 
-    <main class="content w-10/12 mx-auto">
+    <main class="content @hasSection('full') w-full @else w-10/12 @endif mx-auto">
         @yield('content')
     </main>
 </div>
