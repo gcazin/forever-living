@@ -3,6 +3,14 @@
 *
  */
 
+.form-group {
+    @apply -mx-3 mb-6;
+}
+@screen md {
+    .form-group {
+        @apply flex;
+    }
+}
 .form-label {
     @apply text-gray-600;
 }
@@ -10,7 +18,7 @@
     @apply border border-gray-300 rounded py-2 px-4 my-2 block w-full appearance-none leading-normal text-gray-700;
 }
 .form-control:focus {
-    @apply border-blue-500;
+    @apply border-yellow-500;
 }
 .custom-label .form-control:checked + svg {
     display: block !important;

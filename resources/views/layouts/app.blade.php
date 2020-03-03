@@ -18,14 +18,23 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/458ecbc1c5.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
 </head>
 <body class="bg-gray-100">
 <div id="app">
-    @include('components.nav')
-
-    <main class="content @hasSection('full') w-full @else w-10/12 @endif mx-auto">
-        @yield('content')
-    </main>
+    <div class="test">
+        <main class="content @hasSection('full') w-full @else w-10/12 @endif mx-auto">
+            @if(!isset($user_nav))
+                @include('components.nav')
+            @else
+                @include('auth.components.nav')
+            @endif
+            @yield('content')
+        </main>
+    </div>
 </div>
 </body>
 </html>

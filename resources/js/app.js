@@ -21,8 +21,9 @@ import Card from './components/Card.vue';
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('card',require('./components/Card.vue').default);
-Vue.component('modal', require('./components/Modal').default);
+Vue.component('v-card',require('./components/Card.vue').default);
+Vue.component('v-input',require('./components/Input.vue').default);
+Vue.component('v-modal', require('./components/Modal').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

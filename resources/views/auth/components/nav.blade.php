@@ -16,7 +16,7 @@
         <div class="w-full md:w-auto md:flex-grow md:flex md:items-center">
             <ul class="flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="btn btn-primary">MyAllonsY</a>
+                    <a href="{{ route('dashboard') }}" class="btn btn-primary">{{ auth()->user()->id }}</a>
                 </li>
                 {{--<li>
                     <button id="show-modal" @click="showModal = true">Show Modal</button>

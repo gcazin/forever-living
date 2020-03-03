@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -26,7 +29,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-relative
+
     /**
      * Create a new controller instance.
      *
@@ -35,5 +38,14 @@ relative
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function authenticated(Request $request, $user)
+    {
+        $fbo = $request->get('fbo');
+        $password = Hash::make($request->get('password'));
+        if(Auth::attempt(['fbo' => $fbo, 'password' => $password])) {
+            return redirect()->intended('dashboard');
+        }
     }
 }
