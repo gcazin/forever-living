@@ -18,14 +18,23 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/458ecbc1c5.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
 </head>
 <body class="bg-gray-100">
 <div id="app">
-    <?php echo $__env->make('components.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-    <main class="content <?php if (! empty(trim($__env->yieldContent('full')))): ?> w-full <?php else: ?> w-10/12 <?php endif; ?> mx-auto">
-        <?php echo $__env->yieldContent('content'); ?>
-    </main>
+    <div class="test">
+        <main class="content <?php if (! empty(trim($__env->yieldContent('full')))): ?> w-full <?php else: ?> w-10/12 <?php endif; ?> mx-auto">
+            <?php if(!isset($user_nav)): ?>
+                <?php echo $__env->make('components.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php else: ?>
+                <?php echo $__env->make('auth.components.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php endif; ?>
+            <?php echo $__env->yieldContent('content'); ?>
+        </main>
+    </div>
 </div>
 </body>
 </html>

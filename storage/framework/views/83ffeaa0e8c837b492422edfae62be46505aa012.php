@@ -16,11 +16,11 @@
         <div class="w-full md:w-auto md:flex-grow md:flex md:items-center">
             <ul class="flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0">
                 <li>
-                    <a href="<?php echo e(route('dashboard')); ?>" class="btn btn-primary">MyAllonsY</a>
+                    <a href="<?php echo e(route('dashboard')); ?>" class="btn btn-primary"><?php echo e(auth()->user()->id); ?></a>
                 </li>
                 
             </ul>
         </div>
     </div>
 </nav>
-<?php /**PATH /var/www/html/ForeverLiving/resources/views/components/nav.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/components/nav.blade.php ENDPATH**/ ?>

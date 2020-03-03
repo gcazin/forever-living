@@ -1,27 +1,30 @@
 <template>
-    <transition name="fade">
-        <div class="card relative w-1/3 rounded-lg shadow-lg" id="card">
-            <div class="h-full flex flex-col items-center justify-center">
-                <div style="z-index: 999" class="flex-1 w-full flex items-center justify-center text-center">
-                    <span class="text-2xl mx-5 h-20 text-gray-700">{{ title }}</span>
-                </div>
-                <div style="z-index: 999" class="flex-1 w-full flex items-center justify-center text-center">
-                    <a class="btn" :href="`${link}`">{{ button }}</a>
-                </div>
-            </div>
-            <div>
-            </div>
-        </div>
-    </transition>
+
+    <div class="px-3 mb-6 md:mb-0 flex-1">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            {{ label }}
+        </label>
+        <input
+            :name="`${name}`"
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4"
+            id="grid-first-name"
+            required="required"
+            :v-model="`${name}`"
+            :type="[ type ? type : 'text']"
+            :placeholder="`${placeholder}`">
+    </div>
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
+        template: 'v-card',
         props: [
-            'background',
-            'title',
-            'button',
-            'link'
+            'type',
+            'label',
+            'name',
+            'placeholder',
         ],
     }
 </script>
