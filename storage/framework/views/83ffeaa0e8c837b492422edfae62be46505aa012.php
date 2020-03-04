@@ -18,9 +18,9 @@
                 <li>
                     <a href="<?php echo e(route('dashboard')); ?>" class="btn btn-primary"><?php echo e(auth()->user()->id); ?></a>
                 </li>
-                
+
             </ul>
         </div>
     </div>
 </nav>
-<?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/components/nav.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/components/menu.blade.php ENDPATH**/ ?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth\FBO;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory;
@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
-class RequestPassword extends Controller
+class RegisterController extends Controller
 {
     /**
      * Page de demande d'un mot de passe
      *
      * @return Factory|View
      */
-    public function getPassword()
+    public function showRegisterForm()
     {
-        return view('auth.request-password');
+        return view('auth.fbo.register');
     }
 
     /**
@@ -26,7 +26,7 @@ class RequestPassword extends Controller
      * @param Request $request
      * @return string
      */
-    public function requestPassword(Request $request)
+    public function sendRegister(Request $request)
     {
         $fbo_number = $request->input('fbo_number');
         $last_name = $request->input('last_name');
@@ -36,13 +36,13 @@ class RequestPassword extends Controller
         $city_code = $request->input('city_code');
         $city = $request->input('city');
 
-        Mail::send('auth.emails.requestPasscode', ['request' => $request], function ($message) use($first_name, $email) {
-            $message->from('contact'.strtolower(env('APP_NAME').'.fr'), env('APP_NAME'));
+        Mail::send('auth.emails.request-password', ['request' => $request], function ($message) use($first_name, $email) {
+            $message->from('contact@foreverliving.fr', env('APP_NAME'));
 
             $message->to($email, $first_name)->subject('Demande de mot de passe');
         });
 
-        return route('confirm.requestPassword');
+        return redirect(route('confirmation.register.fbo'));
     }
 
     /**
@@ -50,8 +50,8 @@ class RequestPassword extends Controller
      *
      * @return Factory|View
      */
-    public function confirmRequestPassword()
+    public function confirmRegister()
     {
-        return view('auth.confirm-request-password');
+        return view('auth.fbo.register-confirm');
     }
 }

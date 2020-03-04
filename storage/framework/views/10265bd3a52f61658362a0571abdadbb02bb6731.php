@@ -25,16 +25,12 @@
 </head>
 <body class="bg-gray-100">
 <div id="app">
-    <div class="test">
-        <main class="content <?php if (! empty(trim($__env->yieldContent('full')))): ?> w-full <?php else: ?> w-10/12 <?php endif; ?> mx-auto">
-            <?php if(!isset($user_nav)): ?>
-                <?php echo $__env->make('components.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php else: ?>
-                <?php echo $__env->make('auth.components.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php endif; ?>
-            <?php echo $__env->yieldContent('content'); ?>
-        </main>
+    <div class="bg-white border-b border-gray-300">
+        <?php echo $__env->make('components.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
+    <main class="content <?php if (! empty(trim($__env->yieldContent('full')))): ?> w-full <?php else: ?> w-10/12 <?php endif; ?> mx-auto mt-10 mb-16">
+        <?php echo $__env->yieldContent('content'); ?>
+    </main>
 </div>
 </body>
 </html>

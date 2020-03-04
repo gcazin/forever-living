@@ -25,16 +25,12 @@
 </head>
 <body class="bg-gray-100">
 <div id="app">
-    <div class="test">
-        <main class="content @hasSection('full') w-full @else w-10/12 @endif mx-auto">
-            @if(!isset($user_nav))
-                @include('components.nav')
-            @else
-                @include('auth.components.nav')
-            @endif
-            @yield('content')
-        </main>
+    <div class="bg-white border-b border-gray-300">
+        @include('components.menu')
     </div>
+    <main class="content @hasSection('full') w-full @else w-10/12 @endif mx-auto mt-10 mb-16">
+        @yield('content')
+    </main>
 </div>
 </body>
 </html>

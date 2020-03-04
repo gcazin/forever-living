@@ -36,4 +36,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role()
+    {
+        return $this->hasOne('App\Role', 'id');
+    }
+
+    public static function avatar($user_id)
+    {
+        $user = User::find($user_id);
+        if($user->avatar === 'user.jpg') {
+            return asset('https://avatars.dicebear.com/v2/initials/'.substr($user->last_name, 0, 1).substr($user->first_name, 0, 1).'.svg?options[margin]=7');
+        }
+        return asset('storage/avatars/user.jpg');
+    }
 }

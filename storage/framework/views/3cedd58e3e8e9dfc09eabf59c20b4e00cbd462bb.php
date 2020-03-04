@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <form action="<?php echo e(route('getPassword')); ?>" method="post">
-        <div class="w-8/12 mx-auto">
-            <h1 class="text-3xl text-gray-700 mb-3">Formulaire de demande de mot de passe</h1>
+        <div class="w-full lg:w-8/12 mx-auto">
+            <h1 class="text-xl lg:text-3xl text-gray-700 mb-3"><?php echo e(__('auth/form.request_password')); ?></h1>
             <?php echo csrf_field(); ?>
 
             <?php if($errors->any()): ?>
@@ -18,31 +18,31 @@
 
             <div class="bg-white shadow-md rounded-lg px-4 pt-4 mb-5 flex flex-col">
                 <div class="form-group">
-                    <v-input label="Numéro FBO" name="fbo_number" placeholder="Numéro FBO"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.fbo_number')); ?>" name="fbo_number" placeholder="FBO000000"></v-input>
                 </div>
             </div>
 
             <div class="bg-white shadow-md rounded-lg px-4 pt-4 mb-4 flex flex-col">
                 <div class="form-group">
-                    <v-input label="Nom" name="last_name" placeholder="Nom"></v-input>
-                    <v-input label="Prénom" name="first_name" placeholder="Prénom"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.first_name')); ?>" name="last_name" placeholder="Dupont"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.last_name')); ?>" name="first_name" placeholder="Jean"></v-input>
                 </div>
                 <div class="form-group">
-                    <v-input label="Numéro de téléphone" name="tel" placeholder="Numéro de téléphone"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.tel')); ?>" name="tel" placeholder="0102030405"></v-input>
                 </div>
                 <div class="form-group">
-                    <v-input label="Adresse email" name="email" placeholder="Adresse email"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.email')); ?>" name="email" placeholder="email@contact.com"></v-input>
                 </div>
                 <div class="form-group">
-                    <v-input label="Code postal" name="city_code" placeholder="Code postal"></v-input>
-                    <v-input label="Ville" name="city" placeholder="Ville"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.postal_code')); ?>" name="city_code" placeholder="10000"></v-input>
+                    <v-input label="<?php echo e(__('auth/form.city')); ?>" name="city" placeholder="Somme"></v-input>
                 </div>
 
-                <button class="btn btn-blue btn-block mb-4" type="submit">Valider</button>
+                <button class="btn btn-blue btn-block mb-4" type="submit"><?php echo e(__('auth/form.submit')); ?></button>
             </div>
 
         </div>
     </form>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/request-password.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/register.blade.php ENDPATH**/ ?>
