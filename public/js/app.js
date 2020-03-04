@@ -1853,8 +1853,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['background', 'title', 'button', 'link']
 });
@@ -6490,7 +6488,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card {\n  --first: #0A8ACCA6;\n  --second: #FF5F26A6;\n  --third: #209E5EA6;\n  height: 300px;\n  background: white;\n  border-bottom-style: solid;\n  border-bottom-width: 3px;\n  margin-top: 70px;\n}\n.card a {\n  font-size: 15px;\n  color: white;\n}\n.card:first-child a {\n  background: var(--first);\n}\n.card:nth-child(2) a {\n  background: var(--second);\n}\n.card:last-child a {\n  background: var(--third);\n}\n.card:first-child {\n  border-bottom-color: var(--first);\n}\n.card:nth-child(2) {\n  margin-left: 50px;\n  margin-right: 50px;\n  border-bottom-color:var(--second);\n}\n.card:last-child {\n  border-bottom-color: var(--third);\n}\n.fade-enter-active, .fade-leave-active {\n  -webkit-transition: opacity .5s;\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, ".card {\n  --first: #0A8ACCA6;\n  --first-hover: #0A8ACC;\n  --second: #FF5F26A6;\n  --second-hover: #FF5F26;\n  --third: #209E5EA6;\n  --third-hover: #209E5E;\n  height: 300px;\n  background: white;\n  border-bottom-style: solid;\n  border-bottom-width: 3px;\n  margin-top: 70px;\n  position: relative;\n  overflow: hidden;\n  -webkit-transition: .5s ease-out;\n  transition: .5s ease-out;\n}\n.card span {\n  -webkit-transition: color .3s ease-in;\n  transition: color .3s ease-in;\n}\n.card:first-child {\n  border-bottom-color: var(--first);\n}\n.card:nth-child(2) {\n  margin-left: 50px;\n  margin-right: 50px;\n  border-bottom-color:var(--second);\n}\n.card:last-child {\n  border-bottom-color: var(--third);\n}\n.slideUp:first-child::before {\n  background: var(--first-hover);\n}\n.slideUp:nth-child(2)::before {\n  background: var(--second-hover);\n}\n.slideUp:last-child::before {\n  background: var(--third-hover);\n}\n.slideUp {\n  color: #5878F3;\n  cursor: pointer;\n  position: relative;\n  -webkit-transition: 0.5s ease-out;\n  transition: 0.5s ease-out;\n  overflow: hidden;\n}\n.slideUp::before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  background-color: #5878F3;\n  -webkit-transition: -webkit-transform 0.3s ease-out;\n  transition: -webkit-transform 0.3s ease-out;\n  transition: transform 0.3s ease-out;\n  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;\n  z-index: 0;\n}\n.slideUp:hover::before {\n  -webkit-transform: translateY(0);\n          transform: translateY(0);\n  -webkit-transition: -webkit-transform 0.3s ease-in;\n  transition: -webkit-transform 0.3s ease-in;\n  transition: transform 0.3s ease-in;\n  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;\n}\n.card a {\n  font-size: 15px;\n  color: white;\n  margin-right: 45px;\n}\n.card:hover a {\n  background: white !important;\n}\n.card:nth-child(2) a {\n  background: var(--second);\n}\n.card:last-child a {\n  background: var(--third);\n}\n.card:first-child:hover a {\n  color: var(--first-hover);\n}\n.card:nth-child(2):hover a {\n  color: var(--second-hover);\n}\n.card:last-child:hover a {\n  color: var(--third-hover);\n}\n.card:hover span {\n  color: white;\n}\n\n/* Icons */\n.card::after {\n  content: '';\n  height: 40%;\n  background-repeat: no-repeat;\n  background-size: 100px;\n  -webkit-transform: rotate(-12deg);\n          transform: rotate(-12deg);\n  position: absolute;\n  top: 124px;\n  opacity: 0.6;\n  left: 26px;\n  right: 0;\n  bottom: 0;\n  width: 50%;\n  -webkit-transition: .2s ease-in;\n  transition: .2s ease-in;\n}\n.card:hover::after {\n  opacity: 1;\n}\n.card:first-child::after {\n  background: url(https://image.flaticon.com/icons/svg/189/189090.svg) no-repeat;\n}\n.card:nth-child(2)::after {\n  background: url(https://image.flaticon.com/icons/svg/189/189093.svg) no-repeat;\n}\n.card:last-child::after {\n  background: url(https://image.flaticon.com/icons/svg/189/189100.svg) no-repeat;\n  -webkit-transform: rotate(0deg);\n          transform: rotate(0deg);\n  top: 139px;\n  left: 47px;\n}\n.card:hover::after {\n  -webkit-transform: rotate(0);\n          transform: rotate(0);\n}\n.fade-enter-active, .fade-leave-active {\n  -webkit-transition: opacity .5s;\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -38086,7 +38084,8 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "card relative w-1/3 rounded-lg shadow-lg",
+        staticClass:
+          "slideUp card relative w-full lg:w-1/3 rounded-lg shadow-2xl",
         attrs: { id: "card" }
       },
       [
@@ -38114,7 +38113,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "flex-1 w-full flex items-center justify-center text-center",
+                  "flex-1 w-full flex items-center justify-end text-center",
                 staticStyle: { "z-index": "999" }
               },
               [
@@ -38126,9 +38125,7 @@ var render = function() {
               ]
             )
           ]
-        ),
-        _vm._v(" "),
-        _c("div")
+        )
       ]
     )
   ])
@@ -38155,7 +38152,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "px-3 mb-6 md:mb-0 flex-1" }, [
+  return _c("div", { staticClass: "px-3 md:mb-0 flex-1" }, [
     _c(
       "label",
       {
@@ -38167,8 +38164,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("input", {
-      staticClass:
-        "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4",
+      staticClass: "form-control",
       attrs: {
         name: "" + _vm.name,
         id: "grid-first-name",
@@ -50588,15 +50584,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************!*\
   !*** ./resources/js/components/Input.vue ***!
   \*******************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Input_vue_vue_type_template_id_3814db6f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Input.vue?vue&type=template&id=3814db6f& */ "./resources/js/components/Input.vue?vue&type=template&id=3814db6f&");
 /* harmony import */ var _Input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input.vue?vue&type=script&lang=js& */ "./resources/js/components/Input.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Input_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/Input.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Input_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/Input.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -50628,7 +50623,7 @@ component.options.__file = "resources/js/components/Input.vue"
 /*!********************************************************************!*\
   !*** ./resources/js/components/Input.vue?vue&type=script&lang=js& ***!
   \********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

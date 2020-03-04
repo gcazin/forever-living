@@ -1,0 +1,7 @@
+.dashboard-card {
+    @apply w-1/3 flex flex-col rounded-lg shadow bg-white px-2 pt-5 relative;
+    transition: 0.2s;
+    &:hover {
+       @apply shadow-lg;
+    }
+}
