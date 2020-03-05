@@ -2,54 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bf69afb-05f9-4db7-bd50-458653e27a65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/DashboardController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/auth/form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fr/auth/form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fr/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/components/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/admin/dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/fbo/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/passcode/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/auth/admin/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/fr/auth/admin/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/admin/components/menu.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/admin/components/users-list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/admin/layouts/app.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/FBO/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RequestPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/FBO/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2013_02_04_142526_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2013_02_04_142526_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_04_142124_create_table_products.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Card.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Input.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/inputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sections.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/sections.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/components/nav.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/confirm-request-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/fbo/register-confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/fbo/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/request-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/fbo/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/nav.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/admin/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/U2JvaDL5xnAJh84UbcaEjwlHr6w0VIHLuBeqY7Ht" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/oNLmfDPMfOd9wNa3PUvddWwt9r7iI2ZsdgrakNLU" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/06e729ea023dc81bdc70cbdacb9211cf7cffbf0b.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/06e729ea023dc81bdc70cbdacb9211cf7cffbf0b.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/071a770751760ca8958496f8ed25154078a71545.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/071a770751760ca8958496f8ed25154078a71545.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/XpYfSyxnjJNW1YKj399XQOG7SfuJ590NjtFXTf2g" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/XpYfSyxnjJNW1YKj399XQOG7SfuJ590NjtFXTf2g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/szj0c7bgLwdF11x7AwR6ZCMIb8ImCT8GCdKPQ9Nv" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/szj0c7bgLwdF11x7AwR6ZCMIb8ImCT8GCdKPQ9Nv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/weDaJ6zI5U6nsiQ8HiwLQDwWMUmi4DD3enHXxCYx" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/weDaJ6zI5U6nsiQ8HiwLQDwWMUmi4DD3enHXxCYx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/yslvv1tuQeF1HW9O2klpJiVl3yTy5Zeu98KxlADA" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/yslvv1tuQeF1HW9O2klpJiVl3yTy5Zeu98KxlADA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/10265bd3a52f61658362a0571abdadbb02bb6731.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/10265bd3a52f61658362a0571abdadbb02bb6731.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/25bb7a7583cdd7b7f2498ae0261cb3ae9238980a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/25bb7a7583cdd7b7f2498ae0261cb3ae9238980a.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/30e280ca36e0b89593af7e31065dec2842ccb4d2.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/30e280ca36e0b89593af7e31065dec2842ccb4d2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/3cedd58e3e8e9dfc09eabf59c20b4e00cbd462bb.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3cedd58e3e8e9dfc09eabf59c20b4e00cbd462bb.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/6ebc9d7f79978d14a49af76da2b5705b0c6961a8.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/6ebc9d7f79978d14a49af76da2b5705b0c6961a8.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/83ffeaa0e8c837b492422edfae62be46505aa012.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/83ffeaa0e8c837b492422edfae62be46505aa012.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d65fd0f0f7f263321b014a9be7b7fd2cbdbb647c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d65fd0f0f7f263321b014a9be7b7fd2cbdbb647c.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2020-03-03.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2020-03-03.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/ed41c214fe20e1224d105d1ad84e2a4d271c68ce.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/ed41c214fe20e1224d105d1ad84e2a4d271c68ce.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,25 +149,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/fr/auth" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/auth/admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth/Admin" />
-      <recent name="$PROJECT_DIR$/resources/lang/fr/auth" />
-      <recent name="$PROJECT_DIR$/resources/lang/fr" />
-      <recent name="$PROJECT_DIR$/resources/views/auth/emails" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth/FBO" />
       <recent name="$PROJECT_DIR$/resources/views/auth/fbo" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth/Passcode" />
       <recent name="$PROJECT_DIR$/resources/views/auth/passcode" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/lang/fr/auth" />
+      <recent name="$PROJECT_DIR$/resources/views/auth/admin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth/Admin" />
+      <recent name="$PROJECT_DIR$/resources/lang/fr" />
+      <recent name="$PROJECT_DIR$/resources/views/auth/emails" />
     </key>
   </component>
   <component name="RunManager">
@@ -273,14 +240,14 @@
     </state>
     <state x="583" y="200" width="424" height="482" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1580757009399" />
     <state x="583" y="221" width="424" height="482" key="FileChooserDialogImpl/0.27.1600.873@0.27.1600.873" timestamp="1575706755998" />
-    <state x="595" y="371" width="389" height="157" key="NewPhpFileDialog" timestamp="1583275158136">
+    <state x="595" y="371" width="389" height="157" key="NewPhpFileDialog" timestamp="1583418605877">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="595" y="371" width="389" height="157" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1583275158136" />
-    <state x="454" y="272" key="com.intellij.ide.util.TipDialog" timestamp="1583326916802">
+    <state x="595" y="371" width="389" height="157" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1583418605877" />
+    <state x="454" y="272" key="com.intellij.ide.util.TipDialog" timestamp="1583413955833">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="454" y="272" key="com.intellij.ide.util.TipDialog/0.0.1600.900@0.0.1600.900" timestamp="1583326916802" />
+    <state x="454" y="272" key="com.intellij.ide.util.TipDialog/0.0.1600.900@0.0.1600.900" timestamp="1583413955833" />
     <state x="454" y="291" key="com.intellij.ide.util.TipDialog/0.27.1600.873@0.27.1600.873" timestamp="1575706718192" />
     <state x="566" y="365" width="457" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578565444295">
       <screen x="0" y="0" width="1600" height="900" />
