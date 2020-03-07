@@ -12,10 +12,10 @@ import Card from './components/Card.vue';
 
 /**
  * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
+ * Vue partials. It will recursively scan this directory for the Vue
+ * partials and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./partials/ExampleComponent.vue -> <example-component></example-component>
  */
 
 // const files = require.context('./', true, /\.vue$/i)
@@ -24,10 +24,11 @@ import Card from './components/Card.vue';
 Vue.component('v-card',require('./components/Card.vue').default);
 Vue.component('v-input',require('./components/Input.vue').default);
 Vue.component('v-modal', require('./components/Modal').default);
+Vue.component('v-alert', require('./components/Alert').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
+ * the page. Then, you may begin adding partials to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 

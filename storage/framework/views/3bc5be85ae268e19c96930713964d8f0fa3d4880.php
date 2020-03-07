@@ -142,4 +142,4 @@
 
 
 </div>
-<?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/admin/components/users-list.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/admin/partials/users-list.blade.php ENDPATH**/ ?>

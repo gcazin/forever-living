@@ -1,13 +1,13 @@
 <template>
 
     <div class="px-3 md:mb-0 flex-1">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" :for="`${name}`">
             {{ label }}
         </label>
         <input
             :name="`${name}`"
             class="form-control"
-            id="grid-first-name"
+            :id="`${name}`"
             required="required"
             :v-model="`${name}`"
             :type="[ type ? type : 'text']"

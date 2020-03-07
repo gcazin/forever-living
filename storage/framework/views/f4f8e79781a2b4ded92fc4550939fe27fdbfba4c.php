@@ -1,5 +1,9 @@
-<?php $__env->startSection('content'); ?>
-    <h1>Bonjour</h1>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('auth.emails.layouts.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/emails/request-password.blade.php ENDPATH**/ ?>
+<?php $__env->startComponent('mail::layout'); ?>
+    <?php $__env->startComponent('mail::header'); ?>
+        dq
+    <?php echo $__env->renderComponent(); ?>
+    <?php $__env->slot('mail::panel'); ?>
+        Bonjour
+    <?php $__env->endSlot(); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php /**PATH /var/www/html/ForeverLiving/resources/views/auth/emails/request-password.blade.php ENDPATH**/ ?>

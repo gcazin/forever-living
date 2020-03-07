@@ -34,7 +34,7 @@
 
     </div>
 
-    <?php echo $__env->make('auth.admin.components.users-list', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('auth.admin.partials.users-list', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="mt-2 text-right">
         <a class="btn btn-red" href="<?php echo e(route('logout')); ?>">Déconnexion</a>

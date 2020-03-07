@@ -5,14 +5,15 @@
         <!-- Card container -->
         <div id="card-container" class="flex flex-col lg:flex-row items-center">
             <v-card title="<?php echo e(__('home.first_card')); ?>"
-                    link="<?php echo e(auth()->check() ? route('formations') : route('connect.fbo')); ?>" button="<?php echo e(__('card.formation')); ?>"></v-card>
+                    link="<?php echo e(route('show.formation', 1)); ?>" button="<?php echo e(__('card.formation')); ?>"></v-card>
             <v-card title="<?php echo e(__('home.second_card')); ?>"
-                    link="<?php echo e(route('showForm.passcode')); ?>" button="<?php echo e(__('card.formation')); ?>"></v-card>
+                    link="<?php echo e(route('login.passcode')); ?>" button="<?php echo e(__('card.formation')); ?>"></v-card>
             <v-card title="<?php echo e(__('home.third_card')); ?>"
-                    link="<?php echo e(auth()->check() ? route('formations') : route('connect.fbo')); ?>" button="<?php echo e(__('card.formation')); ?>"></v-card>
+                    link="<?php echo e(route('show.formation', 2)); ?>" button="<?php echo e(__('card.formation')); ?>"></v-card>
         </div>
-        YH4fcGtHKA
+
     </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/ForeverLiving/resources/views/index.blade.php ENDPATH**/ ?>

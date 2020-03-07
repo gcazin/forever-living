@@ -8,12 +8,13 @@
         <!-- Card container -->
         <div id="card-container" class="flex flex-col lg:flex-row items-center">
             <v-card title="{{ __('home.first_card') }}"
-                    link="{{ auth()->check() ? route('formations') : route('connect.fbo') }}" button="{{ __('card.formation') }}"></v-card>
+                    link="{{ route('show.formation', 1) }}" button="{{ __('card.formation') }}"></v-card>
             <v-card title="{{ __('home.second_card') }}"
-                    link="{{ route('showForm.passcode') }}" button="{{ __('card.formation') }}"></v-card>
+                    link="{{ route('login.passcode') }}" button="{{ __('card.formation') }}"></v-card>
             <v-card title="{{ __('home.third_card') }}"
-                    link="{{ auth()->check() ? route('formations') : route('connect.fbo') }}" button="{{ __('card.formation') }}"></v-card>
+                    link="{{ route('show.formation', 2) }}" button="{{ __('card.formation') }}"></v-card>
         </div>
-        YH4fcGtHKA
+
     </div>
+
 @endsection

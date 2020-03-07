@@ -36,7 +36,7 @@
 
     </div>
 
-    @include('auth.admin.components.users-list')
+    @include('auth.admin.partials.users-list')
 
     <div class="mt-2 text-right">
         <a class="btn btn-red" href="{{ route('logout') }}">Déconnexion</a>

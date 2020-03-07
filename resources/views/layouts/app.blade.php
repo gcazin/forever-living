@@ -26,12 +26,13 @@
 <body class="bg-gray-100">
 <div id="app">
     <div class="bg-white border-b border-gray-300">
-        @include('components.menu')
+        @include('partials.menu')
     </div>
     <main
         class="content @if(isset($full) && $full === true) w-full @else w-10/12 @endif mx-auto @if(isset($margin) && $margin === false) null @else mt-10 mb-16 @endif">
         @yield('content')
     </main>
 </div>
+@yield('script')
 </body>
 </html>

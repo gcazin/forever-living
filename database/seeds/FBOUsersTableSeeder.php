@@ -15,7 +15,7 @@ class FBOUsersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for($i = 0; $i < 11; $i++) {
+        for($i = 0; $i < 10; $i++) {
             DB::table('users')->insert([
                 'role_id' => 2,
                 'fbo_number' => Str::random(10),

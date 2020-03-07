@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\FBO;
 
 use App\Http\Controllers\Controller;
+use App\Mail\RequestPassword;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -36,11 +37,13 @@ class RegisterController extends Controller
         $city_code = $request->input('city_code');
         $city = $request->input('city');
 
-        Mail::send('auth.emails.request-password', ['request' => $request], function ($message) use($first_name, $email) {
+        Mail::to($request->input('email'))->send(new RequestPassword());
+
+        /*Mail::send('auth.emails.request-password', ['request' => $request], function ($message) use($first_name, $email) {
             $message->from('contact@foreverliving.fr', env('APP_NAME'));
 
             $message->to($email, $first_name)->subject('Demande de mot de passe');
-        });
+        });*/
 
         return redirect(route('confirmation.register.fbo'));
     }

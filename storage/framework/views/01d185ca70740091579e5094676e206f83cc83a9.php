@@ -22,11 +22,14 @@
                             <a href="<?php echo e(route('dashboard.admin')); ?>" class="btn btn-green">Administration</a>
                         <?php endif; ?>
                     <?php endif; ?>
+                     <?php if(auth()->check() || \Illuminate\Support\Facades\Session::has('passcode')): ?>
+                        <a href="<?php echo e(route('logout')); ?>" class="btn btn-red">Déconnexion</a>
+                    <?php endif; ?>
                     <a href="<?php echo e(auth()->check() ? route('dashboard.fbo') : route('connect.fbo')); ?>" class="btn btn-primary">MyAllonsY</a>
                 </li>
-                
+
             </ul>
         </div>
     </div>
 </nav>
-<?php /**PATH /var/www/html/ForeverLiving/resources/views/components/menu.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/ForeverLiving/resources/views/partials/menu.blade.php ENDPATH**/ ?>

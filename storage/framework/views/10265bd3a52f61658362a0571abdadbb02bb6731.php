@@ -26,13 +26,14 @@
 <body class="bg-gray-100">
 <div id="app">
     <div class="bg-white border-b border-gray-300">
-        <?php echo $__env->make('components.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('partials.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
     <main
         class="content <?php if(isset($full) && $full === true): ?> w-full <?php else: ?> w-10/12 <?php endif; ?> mx-auto <?php if(isset($margin) && $margin === false): ?> null <?php else: ?> mt-10 mb-16 <?php endif; ?>">
         <?php echo $__env->yieldContent('content'); ?>
     </main>
 </div>
+<?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>
 <?php /**PATH /var/www/html/ForeverLiving/resources/views/layouts/app.blade.php ENDPATH**/ ?>

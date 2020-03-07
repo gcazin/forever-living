@@ -9,8 +9,10 @@ return [
     'tel' => 'Phone number',
     'email' => 'Email address',
     'password' => 'Password',
+    'street' => 'Street',
     'postal_code' => 'Postal code',
     'city' => 'City',
+    'message' => 'Message',
 
     'referrer' => 'Referrer',
     'referrer_tel' => 'Phone number',
