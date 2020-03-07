@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4bf69afb-05f9-4db7-bd50-458653e27a65" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
+=======
+>>>>>>> 3a3034179a379448ee863638f221c4e84edcaf70
       <change afterPath="$PROJECT_DIR$/app/Formation.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/Security/SecurityController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Formation/FormationController.php" afterDir="false" />
@@ -602,6 +605,9 @@
       <change beforePath="$PROJECT_DIR$/storage/framework/views/f4f8e79781a2b4ded92fc4550939fe27fdbfba4c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f4f8e79781a2b4ded92fc4550939fe27fdbfba4c.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2020-03-05.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2020-03-05.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+<<<<<<< HEAD
+>>>>>>> 3a3034179a379448ee863638f221c4e84edcaf70
+=======
 >>>>>>> 3a3034179a379448ee863638f221c4e84edcaf70
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -812,7 +818,11 @@
       <workItem from="1583525234999" duration="1749000" />
       <workItem from="1583594332961" duration="6874000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1583616493118" duration="6588000" />
+=======
+      <workItem from="1583616493118" duration="6283000" />
+>>>>>>> 3a3034179a379448ee863638f221c4e84edcaf70
 =======
       <workItem from="1583616493118" duration="6283000" />
 >>>>>>> 3a3034179a379448ee863638f221c4e84edcaf70
