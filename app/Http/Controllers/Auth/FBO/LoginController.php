@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\FBO;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginFBORequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,8 +53,10 @@ class LoginController extends Controller
         return view('auth.fbo.login');
     }
 
-    public function authenticated(Request $request)
+    public function login(LoginFBORequest $request)
     {
+        $validated = $request->validated();
+
         $credentials = $request->only('fbo_number', 'password');
 
         if (Auth::attempt($credentials)) {
@@ -62,7 +65,9 @@ class LoginController extends Controller
             }
             return redirect()->intended('/fbo/dashboard');
         } else {
-            return redirect()->back();
+            return back()
+                ->withErrors($validated)
+                ->withInput();
         }
     }
 

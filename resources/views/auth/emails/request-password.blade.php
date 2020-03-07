@@ -1,5 +1,8 @@
-@extends('auth.emails.layouts.base')
-
-@section('content')
-    <h1>Bonjour</h1>
-@endsection
+@component('mail::layout')
+    @component('mail::header')
+        dq
+    @endcomponent
+    @slot('mail::panel')
+        Bonjour
+    @endslot
+@endcomponent

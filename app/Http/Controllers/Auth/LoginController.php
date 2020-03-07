@@ -15,7 +15,7 @@ class LoginController extends Controller
         if (auth()->user()->role == 1) {
             return '/admin';
         }
-        return '/home';
+        return '/';
     }
 
     public function __construct()

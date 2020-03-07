@@ -7,7 +7,8 @@
 
 @tailwind utilities;
 
-@import "./components/inputs";
-@import "./components/buttons";
-@import "./components/sections";
-@import "./components/_cards";
+@import "components/_inputs";
+@import "components/_buttons";
+@import "components/_sections";
+@import "components/_cards";
+@import "components/_alerts";

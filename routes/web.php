@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/formations', 'FormationController@index')->name('formations');
+
+Route::namespace('Formation')->group(function() {
+    Route::get('/portail-connexion', 'FormationController@gateway')->name('gateway.formation');
+    Route::get('/formation/{id}', 'FormationController@show')->name('show.formation');
+    Route::get('/formations/contact', 'FormationController@contact')->name('contact.formations');
+});
 
 Route::namespace('Auth')->group(function() {
     /**
@@ -27,16 +32,23 @@ Route::namespace('Auth')->group(function() {
     });
 
     /**
+     * Sécurité générale
+     */
+    Route::namespace('Security')->group(function() {
+        Route::get('/portail-connexion', 'SecurityController@gateway')->name('gateway');
+    });
+
+    /**
      * Accès FBO
      */
     Route::namespace('FBO')->group(function() {
         // Inscription
         Route::get('/inscription/fbo', 'RegisterController@showRegisterForm')->name('showForm.register.fbo');
-        Route::post('/inscription/fbo', 'RegisterController@sendRegister')->name('send.register.fbo');
+        Route::post('/inscription/fbo', 'RegisterController@register');
         Route::get('/inscription/confirmation-demande', 'RegisterController@confirmRegister')->name('confirmation.register.fbo');
         // Connexion
         Route::get('/connexion/fbo', 'LoginController@showLoginForm')->name('login.fbo');
-        Route::post('/connexion/fbo', 'LoginController@authenticated')->name('connect.fbo');
+        Route::post('/connexion/fbo', 'LoginController@login');
 
         // Tableau de bord
         Route::get('/fbo/dashboard', 'DashboardController@index')->name('dashboard.fbo');
@@ -46,7 +58,7 @@ Route::namespace('Auth')->group(function() {
      * Accès invité
      */
     Route::namespace('Passcode')->group(function() {
-        Route::get('/connexion/passcode', 'LoginController@login')->name('showForm.passcode');
+        Route::get('/connexion/passcode', 'LoginController@showLoginForm')->name('login.passcode');
         Route::post('/connexion/passcode', 'LoginController@login');
     });
 
@@ -66,3 +78,6 @@ Route::get('/langue/{locale}', function ($locale){
 
 Auth::routes();
 
+Route::get('mailable', function () {
+    return new App\Mail\RequestPassword();
+});

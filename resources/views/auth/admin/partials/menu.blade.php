@@ -4,13 +4,10 @@
             <i class="far fa-chart-bar"></i> Statistiques
         </button>
         <button class="text-gray-600 py-4 px-3 block hover:text-blue-500 focus:outline-none">
-            <i class="far fa-bell"></i> Notiifications
+            <i class="far fa-bell"></i> Notifications
         </button>
         <button class="text-gray-600 py-4 px-3 block hover:text-blue-500 focus:outline-none">
             <i class="far fa-edit"></i> Gérer les contenus
-        </button>
-        <button class="text-gray-600 py-4 px-3 block hover:text-blue-500 focus:outline-none">
-            Tab 4
         </button>
     </nav>
 </div>

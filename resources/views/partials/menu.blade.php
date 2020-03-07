@@ -22,7 +22,10 @@
                             <a href="{{ route('dashboard.admin') }}" class="btn btn-green">Administration</a>
                         @endif
                     @endauth
-                    <a href="{{ auth()->check() ? route('dashboard.fbo') : route('connect.fbo') }}" class="btn btn-primary">MyAllonsY</a>
+                     @if(auth()->check() || \Illuminate\Support\Facades\Session::has('passcode'))
+                        <a href="{{ route('logout') }}" class="btn btn-red">Déconnexion</a>
+                    @endif
+                    <a href="{{ auth()->check() ? route('dashboard.fbo') : route('login.fbo') }}" class="btn btn-primary">MyAllonsY</a>
                 </li>
                 {{--<li>
                     <button id="show-modal" @click="showModal = true">Show Modal</button>

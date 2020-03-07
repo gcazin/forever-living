@@ -9,8 +9,10 @@ return [
     'tel' => 'Numéro de téléphone',
     'email' => 'Adresse email',
     'password' => 'Mot de passe',
+    'street' => 'Rue',
     'postal_code' => 'Code postal',
     'city' => 'Ville',
+    'message' => 'Message',
 
     'referrer' => 'Parrain / Marraine',
     'referrer_tel' => 'Téléphone',
