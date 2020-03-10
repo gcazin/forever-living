@@ -9,9 +9,9 @@
                 <img class="p-5 h-24" src="https://image.flaticon.com/icons/svg/189/189103.svg" alt="">
             </div>
             <div class="flex-1 flex self-center py-5">
-                <span class="text-xl text-gray-600" href="">Produits</span>
+                <span class="text-xl text-gray-600">Produits</span>
             </div>
-            <a href="#" class="absolute top-0 bottom-0 left-0 right-0"></a>
+            <a href="{{ route('list.formations.fbo', 1) }}" class="absolute top-0 bottom-0 left-0 right-0"></a>
         </div>
 
         <div class="w-1/3 rounded-lg shadow bg-white px-2 py-4 mx-10">
@@ -25,7 +25,7 @@
             <div class="flex-1 flex self-center py-5 relative">
                 Business
             </div>
-            <a href="#" class="absolute top-0 bottom-0 left-0 right-0"></a>
+            <a href="{{ route('list.formations.fbo', 2) }}" class="absolute top-0 bottom-0 left-0 right-0"></a>
         </div>
     </div>
 

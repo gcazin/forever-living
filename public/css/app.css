@@ -11438,7 +11438,7 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.form-group input {
+.form-group input, .form-group select {
   border-width: 1px;
   border-color: #e2e8f0;
   border-radius: 0.25rem;
@@ -11457,13 +11457,13 @@ video {
   color: #4a5568;
 }
 
-.form-group input.is-invalid {
+.form-group input.is-invalid, .form-group select.is-invalid {
   border-width: 1px;
   border-color: #fc8181;
   margin-bottom: 0;
 }
 
-.form-group input:focus {
+.form-group input:focus, .form-group select:focus {
   border-color: #faf089;
 }
 

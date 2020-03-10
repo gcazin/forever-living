@@ -21,7 +21,7 @@ class CreateRolesTable extends Migration
             $table->timestamps();
         });
 
-        $roles = ['admin', 'fbo', 'passcode'];
+        $roles = ['admin', 'fbo'];
 
         foreach ($roles as $role) {
             DB::table('roles')->insert([

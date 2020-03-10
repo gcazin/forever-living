@@ -17,7 +17,7 @@
                 <h1 class="text-2xl text-gray-600"><?php echo e(__('auth/admin/dashboard.members')); ?></h1>
             </div>
             <div class="flex-1 flex self-center py-5">
-                <span class="text-3xl text-blue-600"><?php echo e(count(\App\User::all())); ?></span>
+                <span class="text-3xl text-blue-600"><?php echo e(count(\App\Formation::all())); ?></span>
             </div>
             <a href="#utilisateurs" class="absolute top-0 bottom-0 left-0 right-0"></a>
         </div>
@@ -27,7 +27,7 @@
                 <h1 class="text-2xl text-gray-600"><?php echo e(__('auth/admin/dashboard.members')); ?></h1>
             </div>
             <div class="flex-1 flex self-center py-5">
-                <span class="text-3xl text-blue-600"><?php echo e(count(\App\User::all())); ?></span>
+                <span class="text-3xl text-blue-600"><?php echo e(count(\App\HomeContent::all())); ?></span>
             </div>
             <a href="#utilisateurs" class="absolute top-0 bottom-0 left-0 right-0"></a>
         </div>

@@ -25,6 +25,7 @@ Vue.component('v-card',require('./components/Card.vue').default);
 Vue.component('v-input',require('./components/Input.vue').default);
 Vue.component('v-modal', require('./components/Modal').default);
 Vue.component('v-alert', require('./components/Alert').default);
+Vue.component('v-dropdown', require('./components/Dropdown').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

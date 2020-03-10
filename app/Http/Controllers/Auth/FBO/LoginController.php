@@ -61,9 +61,9 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             if(Auth::user()->role_id === 1) {
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->intended('/dashboard/admin');
             }
-            return redirect()->intended('/fbo/dashboard');
+            return redirect()->intended('/dashboard/fbo');
         } else {
             return back()
                 ->withErrors($validated)

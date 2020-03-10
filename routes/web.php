@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::namespace('Formation')->group(function() {
-    Route::get('/portail-connexion', 'FormationController@gateway')->name('gateway.formation');
-    Route::get('/formation/{id}', 'FormationController@show')->name('show.formation');
-    Route::get('/formations/contact', 'FormationController@contact')->name('contact.formations');
+Route::namespace('HomeContent')->group(function() {
+    Route::get('/portail-connexion', 'HomeContentController@gateway')->name('gateway.home_content');
+    Route::get('/home/{id}', 'HomeContentController@show')->name('show.home_content');
+    Route::get('/home/contact', 'HomeContentController@contact')->name('contact.home_content');
 });
 
 Route::namespace('Auth')->group(function() {
@@ -28,7 +28,12 @@ Route::namespace('Auth')->group(function() {
      * Accès admin
      */
     Route::namespace('Admin')->group(function() {
-       Route::get('/admin/dashboard', 'DashboardController@index')->name('dashboard.admin');
+       Route::get('/dashboard/admin', 'DashboardController@index')->name('dashboard.admin');
+
+       Route::get('/dashboard/admin/manage-content', 'ManageContentController@index')->name('manage.content.index.admin');
+
+       Route::get('/dashboard/admin/manage-content/ajouter-formation', 'ManageContentController@addFormation')->name('manage.content.add.formation.admin');
+       Route::post('/dashboard/admin/manage-content/ajouter-formation', 'ManageContentController@store');
     });
 
     /**
@@ -52,6 +57,11 @@ Route::namespace('Auth')->group(function() {
 
         // Tableau de bord
         Route::get('/fbo/dashboard', 'DashboardController@index')->name('dashboard.fbo');
+
+        //Formations
+        Route::get('/fbo/formations', 'FormationController@index')->name('index.formations.fbo');
+        Route::get('/fbo/formations/{id}', 'FormationController@list')->name('list.formations.fbo');
+        Route::get('/fbo/formations/voir/{id}', 'FormationController@show')->name('show.formations.fbo');
     });
 
     /**

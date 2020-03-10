@@ -26,7 +26,7 @@ class LoginControllerTest extends TestCase
      */
     public function testRedirectLoginFormAsUser()
     {
-        $user = factory(User::class)->create();
+        $user = $this->loginWithFakeUser();
 
         $this->get('/connexion/passcode');
 
@@ -45,12 +45,11 @@ class LoginControllerTest extends TestCase
     {
         $this->withoutMiddleware();
 
-        $user = factory(User::class)->create();
+        $user = $this->loginWithFakeUser();
 
-        $response = $this
-            ->post('/connexion/passcode?id=1', ['passcode' => $user->passcode,]);
-
-        $response->assertRedirect(route('show.formation', 1));
+        $this
+            ->post('/connexion/passcode?id=1', ['passcode' => $user->passcode])
+            ->assertRedirect(route('show.formation', 1));
     }
 
     /**
@@ -61,13 +60,22 @@ class LoginControllerTest extends TestCase
     {
         $this->withoutMiddleware();
 
-        $user = factory(User::class)->create();
+        $user = $this->loginWithFakeUser();
 
         $_GET['id'] = 1;
 
-        $response = $this
-            ->post('/connexion/passcode?id'.$_GET['id'].'', ['passcode' => $user->passcode,]);
+        $response = $this->post('/connexion/passcode?id'.$_GET['id'].'', ['passcode' => $user->passcode]);
 
         $response->assertRedirect(route('show.formation', $_GET['id']));
+    }
+
+    public function loginWithFakeUser()
+    {
+        $user = new User([
+            'id' => 1,
+            'passcode' => 'admin',
+        ]);
+
+        return $user;
     }
 }

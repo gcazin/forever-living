@@ -3,14 +3,14 @@
 namespace Tests\Feature\Auth\FBO;
 
 use App\User;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {
+    use DatabaseMigrations, RefreshDatabase;
+
     /**
      * Page de connexion
      */

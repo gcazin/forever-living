@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //$this->call(FBOUsersTableSeeder::class);
+        //$this->call(CategoryFormationsTableSeeder::class);
         $this->call(FormationsTableSeeder::class);
+        //$this->call(HomeContentTableSeeder::class);
     }
 }

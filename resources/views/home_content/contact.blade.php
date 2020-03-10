@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-full">
 
-        <form action="{{ route('contact.formations') }}" method="post">
+        <form action="{{ route('contact.home_content') }}" method="post">
 
             <div class="form-group">
                 <v-input name="last_name" label="{{ __('auth/form.last_name') }}" placeholder="{{ __('auth/form.last_name') }}"></v-input>

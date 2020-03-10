@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Formation;
+namespace App\Http\Controllers\HomeContent;
 
 use App\Formation;
+use App\HomeContent;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
-class FormationController extends Controller
+class HomeContentController extends Controller
 {
     public function __construct()
     {
@@ -14,12 +15,12 @@ class FormationController extends Controller
     }
 
     public function show($id) {
-        $formation = Formation::find($id);
-        return view('formations.show', compact('formation'));
+        $home_content = HomeContent::find($id);
+        return view('home_content.show', compact('home_content'));
     }
 
     public function contact()
     {
-        return view('formations.contact');
+        return view('home_content.contact');
     }
 }

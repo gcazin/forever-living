@@ -19,9 +19,11 @@ class CreateFormationsTable extends Migration
             $table->longText('description')->nullable();
             $table->string('link');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('category_formations');
         });
     }
 
@@ -32,6 +34,6 @@ class CreateFormationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formations');
+        Schema::dropIfExists('home_content');
     }
 }

@@ -23,10 +23,6 @@ class FBOUsersTableSeeder extends Seeder
                 'passcode' => Str::random(6),
                 'last_name' => $faker->lastName,
                 'first_name' => $faker->firstName,
-                'tel' => $faker->phoneNumber,
-                'email' => $faker->email,
-                'postal_code' => $faker->postcode,
-                'city' => $faker->city,
             ]);
         }
     }

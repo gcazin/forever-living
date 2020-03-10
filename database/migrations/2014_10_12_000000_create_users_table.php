@@ -19,16 +19,13 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('role_id');
 
+            $table->string('last_name');
+            $table->string('first_name');
+
             $table->string('fbo_number');
             $table->string('password');
             $table->string('passcode');
 
-            $table->string('last_name');
-            $table->string('first_name');
-            $table->string('tel');
-            $table->string('email')->unique();
-            $table->string('postal_code');
-            $table->string('city');
 
             $table->string('avatar')->default('user.jpg');
 

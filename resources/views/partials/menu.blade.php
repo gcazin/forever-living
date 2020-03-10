@@ -16,28 +16,31 @@
                         <img class="inline" style="width: 20px" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Great_Britain_%28English_version%29.png" alt="">
                     </a>
                 </li>
-                <li>
-                    @auth
-                        @if(auth()->user()->role_id === 1)
-                            <a href="{{ route('dashboard.admin') }}" class="btn btn-green">Administration</a>
-                        @endif
-                    @endauth
-                     @if(auth()->check() || \Illuminate\Support\Facades\Session::has('passcode'))
-                        <a href="{{ route('logout') }}" class="btn btn-red">Déconnexion</a>
-                    @endif
-                    <a href="{{ auth()->check() ? route('dashboard.fbo') : route('login.fbo') }}" class="btn btn-primary">MyAllonsY</a>
-                </li>
-                {{--<li>
-                    <button id="show-modal" @click="showModal = true">Show Modal</button>
-                    <!-- use the modal component, pass in the prop -->
-                    <modal v-if="showModal" @close="showModal = false">
-                        <!--
-                          you can use custom content here to overwrite
-                          default content
-                        -->
-                        <h3 slot="header">custom header</h3>
-                    </modal>
-                </li>--}}
+                @if(auth()->check() || session()->has('passcode'))
+                    <li>
+                        <label class="dropdown">
+                            <div class="cursor-pointer btn btn-primary">
+                                {{ auth()->check()
+                                    ? 'MyAllonsY'
+                                    : 'Session ('.session()->get('passcode').')'
+                            }}
+                            </div>
+                            <input type="checkbox" class="dd-input" id="test">
+                            <ul class="dd-menu">
+                                @if(auth()->check() && auth()->user()->role_id === 1)
+                                    <li><a href="{{ route('dashboard.admin') }}">Administration</a></li>
+                                @endif
+                                @if(auth()->check())
+                                    <li><a href="{{ route('dashboard.fbo') }}">Mon compte</a></li>
+                                @endif
+                                <li class="divider"></li>
+                                <li><a href="{{ route('logout') }}">Déconnexion</a></li>
+                            </ul>
+                        </label>
+                    </li>
+                @else
+                    <li><a href="{{ route('login.fbo') }}" class="btn btn-primary">Connexion</a></li>
+                @endif
             </ul>
         </div>
     </div>

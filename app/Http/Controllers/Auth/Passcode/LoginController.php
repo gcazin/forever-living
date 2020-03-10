@@ -36,7 +36,7 @@ class LoginController extends Controller
 
         if (User::where('passcode', '=', $request->input('passcode'))->exists()) {
             session()->put('passcode', $request->input('passcode'));
-            return redirect(route('show.formation', ($id === true) ? $_GET['id'] : 1));
+            return redirect(route('show.home_content', ($id === true) ? $_GET['id'] : 1));
         } else {
             return back()->with('error', 'Passcode incorrect');
         }
