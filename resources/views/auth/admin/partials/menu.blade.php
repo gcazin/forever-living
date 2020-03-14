@@ -1,13 +1,23 @@
-<div class="bg-white mb-8">
-    <nav class="w-10/12 mx-auto flex flex-col sm:flex-row">
-        <a href="{{ route('dashboard.admin') }}" class="text-gray-600 py-4 px-3 block hover:text-blue-500 focus:outline-none {{ (request()->is('dashboard/admin')) ? 'text-blue-500 border-b-2 font-medium border-blue-500' : '' }}">
-            <i class="far fa-chart-bar"></i> Statistiques
-        </a>
-        <button class="text-gray-600 py-4 px-3 block hover:text-blue-500 {{ (request()->is('dashboard/notifications')) ? 'text-blue-500 border-b-2 font-medium border-blue-500' : '' }} focus:outline-none">
-            <i class="far fa-bell"></i> Notifications
-        </button>
-            <a href="{{ route('manage.content.add.formation.admin') }}" class="text-gray-600 py-4 px-3 block hover:text-blue-500 focus:outline-none {{ (request()->is('dashboard/admin/manage-content*')) ? 'text-blue-500 border-b-2 font-medium border-blue-500' : '' }}">
-            <i class="far fa-edit"></i> Gérer les contenus
-        </a>
-    </nav>
+<div class="menu my-3 px-2 flex flex-col">
+    <span class="text-gray-600 text-sm px-4 mt-3 mb-2">Navigation</span>
+    <a href="{{ route('dashboard.admin') }}" class="hover:bg-gray-800 text-gray-200 hover:text-white px-2 py-2 mb-1 rounded-lg duration-200 transition-all">
+        <i class="fas fa-home text-lg mx-2"></i>
+        <span class="font-bold">{{ $title_section ?? "Dashboard" }}</span>
+    </a>
+
+    <span class="text-gray-600 text-sm px-4 mt-3 mb-2">Gérér le contenu</span>
+    <a href="{{ route('manage.content.index.formation.admin') }}" class="hover:bg-gray-800 text-gray-200 hover:text-white px-2 py-2 mb-1 rounded-lg duration-200 transition-all">
+        <i class="far fa-edit text-lg mx-2"></i>
+        <span class="font-bold">Formations</span>
+    </a>
+    <a href="{{ route('manage.content.index.home.admin') }}" class="hover:bg-gray-800 text-gray-200 hover:text-white px-2 py-2 mb-1 rounded-lg duration-200 transition-all">
+        <i class="far fa-edit text-lg mx-2"></i>
+        <span class="font-bold">Accueil</span>
+    </a>
+
+    <span class="text-gray-600 text-sm px-4 mt-3 mb-2">Statistiques</span>
+    <a class="hover:bg-gray-800 text-gray-200 hover:text-white px-2 py-2 mb-1 rounded-lg duration-200 transition-all">
+        <i class="far fa-chart-bar text-lg mx-2"></i>
+        <span class="font-bold">Statistiques</span>
+    </a>
 </div>

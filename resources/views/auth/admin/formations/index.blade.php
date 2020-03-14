@@ -1,4 +1,5 @@
 @extends('auth.admin.layouts.app')
 
-@section('dashboard')
+@section('content')
+    @include('auth.admin.partials.formations-list')
 @endsection

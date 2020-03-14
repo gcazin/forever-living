@@ -1,25 +1,40 @@
+/*==========================
+Carte sur la page d'accueil
+==========================*/
 .card {
     --first: #0A8ACCA6;
+    --first-hover: #0A8ACC;
     --second: #FF5F26A6;
+    --second-hover: #FF5F26;
     --third: #209E5EA6;
-    height: 300px;
+    --third-hover: #209E5E;
+    height: 200px;
     background: white;
     border-bottom-style: solid;
     border-bottom-width: 3px;
     margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: .5s ease-out;
+    transition: .5s ease-out;
+    @apply relative w-full shadow-2xl;
+    &-content {
+        @apply h-full flex flex-col items-center justify-center;
+        &__title {
+            @apply flex-1 w-full flex items-center justify-center text-center;
+        }
+        &__body {
+            @apply flex-1 w-full flex items-center justify-center text-center;
+        }
+    }
 }
-.card a {
-    font-size: 15px;
-    color: white;
+@media lg {
+    .card {
+        @apply w-1/3;
+    }
 }
-.card:first-child a {
-    background: var(--first);
-}
-.card:nth-child(2) a {
-    background: var(--second);
-}
-.card:last-child a {
-    background: var(--third);
+.card span {
+    transition: color .3s ease-in;
 }
 .card:first-child {
     border-bottom-color: var(--first);
@@ -32,11 +47,83 @@
 .card:last-child {
     border-bottom-color: var(--third);
 }
+.card a {
+    font-size: 15px;
+    color: white;
+}
+.card:hover a {
+    background: white !important;
+}
+.card:first-child a {
+    background: var(--first);
+}
+.card:nth-child(2) a {
+    background: var(--second);
+}
+.card:last-child a {
+    background: var(--third);
+}
+.card:first-child:hover a {
+    color: var(--first-hover);
+}
+.card:nth-child(2):hover a {
+    color: var(--second-hover);
+}
+.card:last-child:hover a {
+    color: var(--third-hover);
+}
+.card:hover span {
+    color: white;
+}
+
+/* Icons */
+/*.card::after {
+    content: '';
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    transform: rotate(-12deg);
+    position: absolute;
+    top: 124px;
+    opacity: 0.6;
+    left: 26px;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    transition: .2s ease-in;
+}
+.card:hover::after {
+    opacity: 1;
+}
+.card:first-child::after {
+    background: url(https://image.flaticon.com/icons/svg/189/189090.svg) no-repeat;
+}
+.card:nth-child(2)::after {
+    background: url(https://image.flaticon.com/icons/svg/189/189093.svg) no-repeat;
+}
+.card:last-child::after {
+    background: url(https://image.flaticon.com/icons/svg/189/189100.svg) no-repeat;
+    transform: rotate(0deg);
+    top: 139px;
+    left: 47px;
+}
+.card:hover::after {
+    transform: rotate(0);
+}*/
 
 .dashboard-card {
-    @apply w-1/3 flex flex-col rounded-lg shadow bg-white px-2 pt-5 relative;
+    @apply w-1/3 flex flex-col rounded-lg shadow bg-white px-2 py-5 relative;
     transition: 0.2s;
     &:hover {
-       @apply shadow-lg;
+        @apply shadow-lg;
     }
+    &:nth-child(2) {
+        @apply mx-10;
+    }
+    &__title {
+        @apply flex-1 mx-auto;
+    }
+    /*&__content {
+        @apply
+        }*/
 }

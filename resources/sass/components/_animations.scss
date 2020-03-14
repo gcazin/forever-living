@@ -1,0 +1,33 @@
+.slideUp:first-child::before {
+    background: var(--first-hover);
+}
+.slideUp:nth-child(2)::before {
+    background: var(--second-hover);
+}
+.slideUp:last-child::before {
+    background: var(--third-hover);
+}
+
+.slideUp {
+    color: #5878F3;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s ease-out;
+    overflow: hidden;
+}
+.slideUp::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    background-color: #5878F3;
+    transition: transform 0.3s ease-out;
+    z-index: 0;
+}
+.slideUp:hover::before {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in;
+}

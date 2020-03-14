@@ -16,11 +16,11 @@ class FormationsTableSeeder extends Seeder
 
         for($i = 0; $i < 10; $i++) {
             DB::table('formations')->insert([
-               'title' => $faker->sentence(5),
+               'title' => $faker->sentence(3),
                'description' => $faker->paragraph,
-               'link' => $faker->imageUrl(),
+               'link' => $faker->word.'.pdf',
                'user_id' => 1,
-               'category_id' => 2,
+               'category_id' => 1,
                'created_at' => $faker->dateTime,
             ]);
         }

@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Welcome to our admin dashboard',
-    'members' => 'Numbers of FBO members',
+    'members' => 'FBO members',
     'users' => 'Users',
     'user' => 'User',
     'fbo_number' => 'FBO Number',

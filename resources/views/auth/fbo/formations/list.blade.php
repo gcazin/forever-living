@@ -92,10 +92,8 @@
                                 <p class="text-gray-900 whitespace-no-wrap">{{ $formation->title }}</p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span
-                                        class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden
-                                              class="absolute inset-0 bg-blue-200 opacity-50 rounded-full"></span>
+                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                        <span aria-hidden class="absolute inset-0 bg-blue-200 opacity-50 rounded-full"></span>
                                         <a href="{{ route('show.formations.fbo', $formation->id) }}" class="relative">Voir</a>
                                     </span>
                             </td>
@@ -103,13 +101,11 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div
-                    class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
                         <span class="text-xs xs:text-sm text-gray-900">
                         </span>
                     <div class="flex mt-2 xs:mt-0">
-                        <div
-                            class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+                        <div class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
                             {{ $formations->links() }}
                         </div>
                     </div>

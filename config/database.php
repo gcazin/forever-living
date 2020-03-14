@@ -91,7 +91,7 @@ return [
 
         'sqlite_testing' => [
             'driver'   => 'sqlite',
-            'database' => '/database/database.sqlite',
+            'database' => 'database/database.sqlite',
             'prefix'   => '',
         ],
 

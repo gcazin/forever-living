@@ -1,8 +1,8 @@
 @extends('auth.admin.layouts.app')
 
-@section('dashboard')
-    <div class="container-full">
-        <form action="{{ route('manage.content.add.formation.admin') }}" method="post" enctype="multipart/form-data">
+@section('content')
+    <div class="container-full mb-5">
+        <form action="{{ route('manage.content.edit.formation.admin', $formation->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="category_id">Catégorie de la formation</label>
@@ -14,11 +14,11 @@
             </div>
             <div class="form-group">
                 <label for="title">Titre de la formation</label>
-                <input type="text" name="title" id="title">
+                <input type="text" name="title" id="title" value="{{ $formation->title }}">
             </div>
             <div class="form-group">
                 <label for="title">Description de la formation</label>
-                <input type="text" name="description" id="description">
+                <input type="text" name="description" id="description" value="{{ $formation->description }}">
             </div>
             <div class="form-group">
                 <label for="file">Formations à uploader</label>

@@ -26,13 +26,6 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/fbo/dashboard';
-
     public function username()
     {
         return 'fbo_number';

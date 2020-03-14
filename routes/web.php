@@ -16,24 +16,40 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', 'HomeController@index')->name('home');
-
-Route::namespace('HomeContent')->group(function() {
-    Route::get('/portail-connexion', 'HomeContentController@gateway')->name('gateway.home_content');
-    Route::get('/home/{id}', 'HomeContentController@show')->name('show.home_content');
-    Route::get('/home/contact', 'HomeContentController@contact')->name('contact.home_content');
-});
+Route::get('/home/{id}', 'HomeController@showContent')->name('show.home_content');
+Route::get('/contact', 'HomeController@contact')->name('contact.home_content');
+Route::get('/portail-connexion', 'HomeController@gateway')->name('gateway.home_content');
 
 Route::namespace('Auth')->group(function() {
     /**
      * Accès admin
      */
     Route::namespace('Admin')->group(function() {
-       Route::get('/dashboard/admin', 'DashboardController@index')->name('dashboard.admin');
+        /**
+         * Dashboard
+         */
+        Route::get('/dashboard/admin', 'DashboardController@index')->name('dashboard.admin');
 
-       Route::get('/dashboard/admin/manage-content', 'ManageContentController@index')->name('manage.content.index.admin');
+        Route::namespace('Content')->group(function() {
+            /**
+             * Espace CRUD formation
+             */
+            Route::get('/dashboard/admin/contenu/formations', 'FormationController@index')->name('manage.content.index.formation.admin');
+            /* Créer */
+            Route::get('/dashboard/admin/contenu/ajouter-formation', 'FormationController@create')->name('manage.content.create.formation.admin');
+            Route::post('/dashboard/admin/contenu/ajouter-formation', 'FormationController@store');
+            /* Modifier */
+            Route::get('/dashboard/admin/contenu/editer-formation/{id}', 'FormationController@edit')->name('manage.content.edit.formation.admin');
+            Route::post('/dashboard/admin/contenu/editer-formation/{id}', 'FormationController@update');
+            Route::delete('/dashboard/admin/contenu/supprimer-formation/{id}', 'FormationController@destroy')->name('manage.content.destroy.formation.admin');
 
-       Route::get('/dashboard/admin/manage-content/ajouter-formation', 'ManageContentController@addFormation')->name('manage.content.add.formation.admin');
-       Route::post('/dashboard/admin/manage-content/ajouter-formation', 'ManageContentController@store');
+            /**
+             * Espace CRUD Accueil
+             */
+            Route::get('/dashboard/admin/contenu/accueil', 'HomeContentController@index')->name('manage.content.index.home.admin');
+            Route::get('/dashboard/admin/contenu/editer-accueil/{id}', 'HomeContentController@edit')->name('manage.content.edit.home.admin');
+            Route::post('/dashboard/admin/contenu/editer-accueil/{id}', 'HomeContentController@update');
+        });
     });
 
     /**
@@ -56,7 +72,7 @@ Route::namespace('Auth')->group(function() {
         Route::post('/connexion/fbo', 'LoginController@login');
 
         // Tableau de bord
-        Route::get('/fbo/dashboard', 'DashboardController@index')->name('dashboard.fbo');
+        Route::get('/dashboard/fbo', 'DashboardController@index')->name('dashboard.fbo');
 
         //Formations
         Route::get('/fbo/formations', 'FormationController@index')->name('index.formations.fbo');

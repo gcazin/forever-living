@@ -10,25 +10,18 @@ use Tests\TestCase;
 
 class DashboardControllerTest extends TestCase
 {
-    public function setUp(): void
-    {
-        $this->user = Mockery::mock('App\User');
-
-        $this->math = new User($this->user);
-    }
-
     /**
      * L'utilisateur est admin et peut donc accéder au dashboard
      */
     public function testDashboardAccessAsAdmin()
     {
         $user = factory(User::class)->make([
-            'role_id' => 1,
+            'role_id' => 2,
         ]);
 
         $this
             ->actingAs($user)
-            ->get('admin/dashboard')
+            ->get('dashboard/admin')
             ->assertStatus(200);
     }
 
@@ -37,15 +30,14 @@ class DashboardControllerTest extends TestCase
      */
     public function testDashboardAccessAsUser()
     {
-        $this->instance(User::class, Mockery::mock(User::class, function ($mock) {
-            $mock->shouldReceive('create')->once();
-        }));
+        $user = factory(User::class)->make([
+            'role_id' => 2,
+        ]);
 
         $this
-            ->be($user)
-            ->get('admin/dashboard')
-            ->assertStatus(302)
-            ->assertRedirect('/');
+            ->actingAs($user)
+            ->get('dashboard/admin')
+            ->assertStatus(302);
     }
 
     /**
@@ -54,17 +46,7 @@ class DashboardControllerTest extends TestCase
     public function testDashboardAccessAsGuest()
     {
         $this
-            ->get('admin/dashboard')
+            ->get('dashboard/admin')
             ->assertStatus(302);
-    }
-
-    public function loginWithFakeUser()
-    {
-        $user = new User([
-            'id' => 2,
-            'passcode' => 'admin',
-        ]);
-
-        return $user;
     }
 }

@@ -9,8 +9,6 @@ use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {
-    use DatabaseMigrations, RefreshDatabase;
-
     /**
      * Page de connexion
      */
@@ -27,12 +25,10 @@ class LoginControllerTest extends TestCase
      */
     public function testRedirectLoginFormAsUser()
     {
-        $user = factory(User::class)->create();
-
-        $response = $this->get('/connexion/fbo');
+        $user = factory(User::class)->make();
 
         $this
-            ->actingAs($user)
+            ->be($user)
             ->get('/connexion/fbo')
             ->assertRedirect('/')
             ->assertStatus(302);
@@ -45,14 +41,15 @@ class LoginControllerTest extends TestCase
     {
         $this->withoutMiddleware();
 
-        $user = factory(User::class)->create();
+        $user = factory(User::class)->make();
 
         $response = $this->post(route('login.fbo'), [
-            'fbo_number' => $user->fbo_number,
+            'fbo_number' => $user->value('fbo_number'),
             'password' => 'secret'
         ]);
 
-        $response->assertRedirect(route('dashboard.fbo'));
+        $this->actingAs($user);
         $this->assertAuthenticatedAs($user);
+        $response->assertRedirect(route('dashboard.fbo'));
     }
 }

@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Bienvenue dans votre espace admin',
-    'members' => 'Nombres de membres FBO',
+    'members' => 'Membres FBO',
     'users' => 'Utilisateurs',
     'user' => 'Utilisateur',
     'fbo_number' => ' Numéro FBO',
