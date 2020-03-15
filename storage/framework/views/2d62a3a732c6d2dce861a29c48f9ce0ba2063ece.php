@@ -124,7 +124,7 @@
             <ul>
                 <li>
                     <label class="dropdown">
-                        <img class="h-8 rounded-full" src="<?php echo e(\App\User::avatar(auth()->user()->id)); ?>" alt="">
+                        <img class="h-8 rounded-full" src="<?php echo e(asset('storage/avatars/'.auth()->user()->avatar)); ?>" alt="">
                         <input type="checkbox" class="dd-input" id="test">
                         <ul class="dd-menu">
                             <?php if(auth()->check() && auth()->user()->role_id === 1): ?>

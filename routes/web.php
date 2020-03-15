@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home/{id}', 'HomeController@showContent')->name('show.home_content');
-Route::get('/contact', 'HomeController@contact')->name('contact.home_content');
 Route::get('/portail-connexion', 'HomeController@gateway')->name('gateway.home_content');
 
 Route::namespace('Auth')->group(function() {
@@ -29,6 +27,9 @@ Route::namespace('Auth')->group(function() {
          * Dashboard
          */
         Route::get('/dashboard/admin', 'DashboardController@index')->name('dashboard.admin');
+
+        Route::get('/dashboard/admin/notifications', 'DashboardController@notifications')->name('dashboard.admin.notifications');
+        Route::post('/dashboard/admin/notifications', 'DashboardController@sendEmail')->name('dashboard.admin.password.send');
 
         Route::namespace('Content')->group(function() {
             /**
@@ -65,7 +66,7 @@ Route::namespace('Auth')->group(function() {
     Route::namespace('FBO')->group(function() {
         // Inscription
         Route::get('/inscription/fbo', 'RegisterController@showRegisterForm')->name('showForm.register.fbo');
-        Route::post('/inscription/fbo', 'RegisterController@register');
+        Route::post('/inscription/fbo', 'RegisterController@sendRegister');
         Route::get('/inscription/confirmation-demande', 'RegisterController@confirmRegister')->name('confirmation.register.fbo');
         // Connexion
         Route::get('/connexion/fbo', 'LoginController@showLoginForm')->name('login.fbo');
@@ -86,6 +87,9 @@ Route::namespace('Auth')->group(function() {
     Route::namespace('Passcode')->group(function() {
         Route::get('/connexion/passcode', 'LoginController@showLoginForm')->name('login.passcode');
         Route::post('/connexion/passcode', 'LoginController@login');
+
+        Route::get('/contenu/{id}', 'HomeContentController@showContent')->name('show.home_content');
+        Route::get('/contact', 'HomeContentController@contact')->name('contact.home_content');
     });
 
     Route::get('logout', 'LoginController@logout')->name('logout');
@@ -98,12 +102,8 @@ Route::namespace('Auth')->group(function() {
 });
 
 Route::get('/langue/{locale}', function ($locale){
-    Session::put('locale', $locale);
+    session()->put('locale', $locale);
     return redirect()->back();
 })->name('lang');
 
 Auth::routes();
-
-Route::get('mailable', function () {
-    return new App\Mail\RequestPassword();
-});

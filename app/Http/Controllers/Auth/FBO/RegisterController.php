@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth\FBO;
 
 use App\Http\Controllers\Controller;
 use App\Mail\RequestPassword;
+use App\Notification;
+use App\Notifications\RequestPasswordSending;
+use http\Client\Curl\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -29,21 +32,14 @@ class RegisterController extends Controller
      */
     public function sendRegister(Request $request)
     {
-        $fbo_number = $request->input('fbo_number');
-        $last_name = $request->input('last_name');
-        $first_name = $request->input('first_name');
-        $tel = $request->input('tel');
-        $email = $request->input('email');
-        $city_code = $request->input('city_code');
-        $city = $request->input('city');
+        $data = $request->except('_token');
 
-        Mail::to($request->input('email'))->send(new RequestPassword());
+        $user = \App\User::where('fbo_number', $request->input('fbo_number'))->first();
+        //Envoie du mail pour confirmer la demande de mot de passe
+        Mail::to($request->input('email'))->send(new RequestPassword($data));
 
-        /*Mail::send('auth.emails.request-password', ['request' => $request], function ($message) use($first_name, $email) {
-            $message->from('contact@foreverliving.fr', env('APP_NAME'));
-
-            $message->to($email, $first_name)->subject('Demande de mot de passe');
-        });*/
+        //Envoie de deux notifications
+        \Illuminate\Support\Facades\Notification::send($user, new RequestPasswordSending($data));
 
         return redirect(route('confirmation.register.fbo'));
     }

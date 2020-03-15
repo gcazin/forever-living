@@ -11,6 +11,11 @@ use Illuminate\Support\Str;
 
 class FormationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         $formations = DB::table('formations')->orderByDesc('created_at')->paginate(5);
@@ -21,7 +26,8 @@ class FormationController extends Controller
     {
         $categories = CategoryFormation::all();
         $formations = DB::table('formations')->orderByDesc("created_at")->paginate(5);
-        return view('auth.admin.formations.index', compact('categories', 'formations'));
+        return view('auth.admin.formations.create', compact('categories', 'formations'));
+        //TODO: Ajouter le bouton "ajouter une formation" dans la vue
     }
 
     public function edit($id)

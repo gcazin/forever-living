@@ -18,10 +18,10 @@ class Admin
     {
         if(auth()->check()) {
             if (auth()->user()->role_id !== 1) {
-                return redirect(route('login.fbo'));
+                return redirect(route('dashboard.fbo'));
             }
         } else if(!auth()->check()) {
-            return redirect(route('home'));
+            return redirect(route('login.fbo'));
         }
         return $next($request);
     }

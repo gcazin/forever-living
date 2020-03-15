@@ -8,13 +8,13 @@ use Illuminate\Http\Request as Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class RequestPassword extends Mailable
+class SendPassword extends Mailable
 {
     use Queueable, SerializesModels;
 
     protected $data;
 
-    public function __construct(array $data)
+    public function __construct(object $data)
     {
         $this->data = $data;
     }
@@ -26,8 +26,8 @@ class RequestPassword extends Mailable
      */
     public function build()
     {
-        return $this->markdown('auth.emails.request-password')->with([
-            'data' => $this->data
+        return $this->markdown('auth.emails.send-password')->with([
+            'user' => $this->data
         ]);
     }
 }

@@ -17,16 +17,4 @@ class HomeController extends Controller
     {
         return view('index');
     }
-
-    public function showContent($id) {
-        $this->middleware('auth.passcode');
-
-        $content = HomeContent::all()->find($id);
-        return view('home_content.show', compact('content'));
-    }
-
-    public function contact()
-    {
-        return view('home_content.contact');
-    }
 }

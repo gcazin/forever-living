@@ -4,11 +4,14 @@ namespace Tests\Feature\Auth\FBO;
 
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * Page de connexion
      */
@@ -39,17 +42,17 @@ class LoginControllerTest extends TestCase
      */
     public function testFboLogin()
     {
-        $this->withoutMiddleware();
-
         $user = factory(User::class)->make();
 
-        $response = $this->post(route('login.fbo'), [
+        $this->post(route('login.fbo'), [
             'fbo_number' => $user->value('fbo_number'),
             'password' => 'secret'
         ]);
 
-        $this->actingAs($user);
-        $this->assertAuthenticatedAs($user);
-        $response->assertRedirect(route('dashboard.fbo'));
+        $this
+            ->actingAs($user)
+            ->assertAuthenticatedAs($user)
+            ->get('dashboard/fbo')
+            ->assertStatus(200);
     }
 }

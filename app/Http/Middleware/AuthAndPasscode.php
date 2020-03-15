@@ -15,7 +15,7 @@ class AuthAndPasscode {
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->check() || Session::has('passcode')) {
+        if(auth()->check() || session()->has('passcode')) {
             return $next($request);
         }
         return redirect()->route('gateway');

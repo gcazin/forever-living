@@ -4,6 +4,8 @@ namespace Tests\Feature\Auth\Passcode;
 
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -11,6 +13,8 @@ use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * @test Page de connexion fonctionne
      */
@@ -26,7 +30,7 @@ class LoginControllerTest extends TestCase
      */
     public function testRedirectLoginFormAsUser()
     {
-        $user = factory(User::class, 1)->create();
+        $user = factory(User::class)->make();
 
         $this->get('/connexion/passcode');
 
@@ -43,13 +47,14 @@ class LoginControllerTest extends TestCase
      */
     public function testPasscodeLoginWithoutQueryParameter()
     {
-        $this->withoutMiddleware();
+        $user = factory(User::class)->make();
 
-        $user = factory(User::class, 1)->create();
+        $id = false;
 
         $this
-            ->post('/connexion/passcode?id=1', ['passcode' => $user->passcode])
-            ->assertRedirect(route('show.home_content', 1));
+            ->post('/connexion/passcode', ['passcode' => $user->passcode])
+            ->assertStatus(302)
+            ->assertRedirect(route('show.home_content', $id));
     }
 
     /**
@@ -58,14 +63,12 @@ class LoginControllerTest extends TestCase
      */
     public function testPasscodeLoginWithQueryParameter()
     {
-        $this->withoutMiddleware();
-
-        $user = factory(User::class, 1)->create();
+        $user = factory(User::class)->make();
 
         $_GET['id'] = 1;
 
-        $response = $this->post('/connexion/passcode?id'.$_GET['id'].'', ['passcode' => $user->passcode]);
-
-        $response->assertRedirect(route('show.home_content', $_GET['id']));
+        $this
+            ->post('/connexion/passcode?id='.$_GET['id'].'', ['passcode' => $user->passcode])
+            ->assertRedirect(route('show.home_content', $_GET['id']));
     }
 }

@@ -3,6 +3,8 @@
 namespace Tests\Feature\Auth\Admin;
 
 use App\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Mockery;
@@ -10,17 +12,20 @@ use Tests\TestCase;
 
 class DashboardControllerTest extends TestCase
 {
+    use DatabaseTransactions, DatabaseMigrations;
+
     /**
      * L'utilisateur est admin et peut donc accéder au dashboard
      */
     public function testDashboardAccessAsAdmin()
     {
         $user = factory(User::class)->make([
-            'role_id' => 2,
+            'role_id' => 1,
         ]);
 
         $this
             ->actingAs($user)
+            ->assertAuthenticatedAs($user)
             ->get('dashboard/admin')
             ->assertStatus(200);
     }

@@ -80,7 +80,7 @@
                         <div class="flex items-center">
                             <div class="flex-shrink-0 w-10 h-10">
                                 <img class="w-full h-full rounded-full"
-                                     src="{{ (new \App\User())::avatar($user->id) }}"
+                                     src="{{ asset('storage/avatars/'.auth()->user()->avatar) }}"
                                      alt="" />
                             </div>
                             <div class="ml-3">
