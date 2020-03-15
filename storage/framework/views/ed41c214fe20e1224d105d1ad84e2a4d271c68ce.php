@@ -1,6 +1,5 @@
 <?php $__env->startSection('content'); ?>
     <div class="flex my-6">
-
         <div class="dashboard-card" style="transition: 0.2s">
             <div class="flex-1 mx-auto">
                 <h1 class="text-2xl text-gray-600"><?php echo e(__('auth/admin/dashboard.members')); ?></h1>

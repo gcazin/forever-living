@@ -13,19 +13,16 @@
     font-size: 13px;
     padding: 10px 16px;
 }
-
 .btn-primary {
     @apply text-gray-800;
     background: var(--color-primary);
 }
-
 .btn-blue {
     @apply bg-blue-400 text-white;
     &:hover {
         @apply bg-blue-600;
     }
 }
-
 .btn-red {
     @apply bg-red-500 text-white;
     &:hover {
@@ -92,4 +89,88 @@
 }
 .btn-block {
     @apply block w-full;
+}
+
+/*===================
+Dropdowns
+===================*/
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dd-button {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px 30px 10px 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dd-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+}
+
+.dd-button:hover {
+    background-color: #eeeeee;
+}
+
+
+.dd-input {
+    display: none;
+}
+
+.dd-menu {
+    position: absolute;
+    padding: 0;
+    @apply shadow bg-white right-0 rounded mt-2;
+    z-index: 999;
+    list-style-type: none;
+}
+
+.dd-input + .dd-menu {
+    display: none;
+}
+
+.dd-input:checked + .dd-menu {
+    display: block;
+}
+
+.dd-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    &:first-child {
+        @apply mt-1;
+    }
+    &:last-child {
+        @apply mb-1;
+    }
+}
+
+.dd-menu li:hover {
+    background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+    display: block;
+    margin: -10px -20px;
+    padding: 10px 20px;
+    @apply text-gray-700 text-sm;
+}
+
+.dd-menu li.divider{
+    padding: 0;
+    @apply border-t border-gray-100 my-1;
 }

@@ -22,88 +22,6 @@
     <script src="https://kit.fontawesome.com/458ecbc1c5.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
-
-    <style>
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dd-button {
-            display: inline-block;
-            border: 1px solid gray;
-            border-radius: 4px;
-            padding: 10px 30px 10px 20px;
-            background-color: #ffffff;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .dd-button:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid black;
-        }
-
-        .dd-button:hover {
-            background-color: #eeeeee;
-        }
-
-
-        .dd-input {
-            display: none;
-        }
-
-        .dd-menu {
-            position: absolute;
-            top: 120%;
-            right: 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 0;
-            margin: 2px 0 0 0;
-            box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
-            background-color: #ffffff;
-            list-style-type: none;
-            z-index: 1;
-        }
-
-        .dd-input + .dd-menu {
-            display: none;
-        }
-
-        .dd-input:checked + .dd-menu {
-            display: block;
-        }
-
-        .dd-menu li {
-            padding: 10px 20px;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .dd-menu li:hover {
-            background-color: #f6f6f6;
-        }
-
-        .dd-menu li a {
-            display: block;
-            margin: -10px -20px;
-            padding: 10px 20px;
-        }
-
-        .dd-menu li.divider{
-            padding: 0;
-            border-bottom: 1px solid #cccccc;
-        }
-    </style>
 </head>
 <body class="bg-gray-100">
 <div class="flex flex-col lg:flex-none">
@@ -124,7 +42,7 @@
             <ul>
                 <li>
                     <label class="dropdown">
-                        <img class="h-8 rounded-full" src="<?php echo e(asset('storage/avatars/'.auth()->user()->avatar)); ?>" alt="">
+                        <img class="h-8 rounded-full cursor-pointer" src="<?php echo e(asset('storage/avatars/'.auth()->user()->avatar)); ?>" alt="">
                         <input type="checkbox" class="dd-input" id="test">
                         <ul class="dd-menu">
                             <?php if(auth()->check() && auth()->user()->role_id === 1): ?>

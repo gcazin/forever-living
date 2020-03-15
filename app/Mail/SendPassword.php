@@ -26,8 +26,8 @@ class SendPassword extends Mailable
      */
     public function build()
     {
-        return $this->markdown('auth.emails.send-password')->with([
-            'user' => $this->data
-        ]);
+        return $this->markdown('auth.emails.send-password')
+            ->subject('Informations de connexion pour le site ForeverLiving')
+            ->with(['user' => $this->data]);
     }
 }

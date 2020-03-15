@@ -26,8 +26,8 @@ class RequestPassword extends Mailable
      */
     public function build()
     {
-        return $this->markdown('auth.emails.request-password')->with([
-            'data' => $this->data
-        ]);
+        return $this->markdown('auth.emails.request-password')
+            ->subject("Demande de mot de passe enregistrée")
+            ->with(['data' => $this->data]);
     }
 }

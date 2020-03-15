@@ -58,7 +58,7 @@
                                     <i class="fas fa-pen"></i>
                                 </a>
                             </span>
-                            <form action="{{ route('manage.content.destroy.formation.admin', $formation->id) }}" method="post">
+                            <form class="inline" action="{{ route('manage.content.destroy.formation.admin', $formation->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">

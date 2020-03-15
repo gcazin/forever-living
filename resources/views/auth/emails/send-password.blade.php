@@ -1,10 +1,15 @@
-@extends('auth.emails.layouts.base')
+@component('mail::message')
+# Informations de connexion
 
-@section('body')
-    <h1>Vos identifiants de connexion</h1>
+Veuillez trouver ci-dessous vos informations de connexion.
 
-    <ul>
-        <li>Identifiant: {{ $user->fbo_number }}</li>
-        <li>Mot de passe: {{ $user->password_clear }}</li>
-    </ul>
-@endsection
+@component('mail::panel')
+Identifiant: {{ $user->fbo_number }}<br>
+Mot de passe: {{ $user->password_clear }}
+@endcomponent
+
+@component('mail::button', ['color' => 'primary', 'url' => env('APP_URL'.'/connexion/fbo')])
+Découvrir votre espace
+@endcomponent
+
+@endcomponent
