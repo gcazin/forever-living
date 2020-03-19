@@ -27,7 +27,7 @@
                         <span class="text-2xl mx-5 h-20 text-gray-700">{{ __('home.second_card') }}</span>
                     </div>
                     <div style="z-index: 999" class="card-content__body">
-                        <a class="btn" href="{{ route('show.home_content', 1) }}">{{ __('card.formation') }}</a>
+                        <a class="btn" href="{{ route('question.home_content') }}">{{ __('card.formation') }}</a>
                     </div>
                 </div>
             </div>

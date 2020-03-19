@@ -18,6 +18,16 @@ class HomeContentController extends Controller
         return view('home_content.show', compact('content'));
     }
 
+    public function question()
+    {
+        return view('home_content.question');
+    }
+
+    public function thanks()
+    {
+        return view('home_content.thanks');
+    }
+
     public function contact()
     {
         return view('home_content.contact');

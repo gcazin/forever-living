@@ -24,7 +24,7 @@
                         <span class="text-2xl mx-5 h-20 text-gray-700"><?php echo e(__('home.second_card')); ?></span>
                     </div>
                     <div style="z-index: 999" class="card-content__body">
-                        <a class="btn" href="<?php echo e(route('show.home_content', 1)); ?>"><?php echo e(__('card.formation')); ?></a>
+                        <a class="btn" href="<?php echo e(route('question.home_content')); ?>"><?php echo e(__('card.formation')); ?></a>
                     </div>
                 </div>
             </div>

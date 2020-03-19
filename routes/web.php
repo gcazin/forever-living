@@ -89,6 +89,8 @@ Route::namespace('Auth')->group(function() {
         Route::post('/connexion/passcode', 'LoginController@login');
 
         Route::get('/contenu/{id}', 'HomeContentController@showContent')->name('show.home_content');
+        Route::get('/question', 'HomeContentController@question')->name('question.home_content');
+        Route::get('/merci', 'HomeContentController@thanks')->name('thanks.home_content');
         Route::get('/contact', 'HomeContentController@contact')->name('contact.home_content');
     });
 
