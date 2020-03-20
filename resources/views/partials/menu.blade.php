@@ -2,7 +2,7 @@
     <div class="mx-auto py-4 flex flex-wrap items-center md:flex-no-wrap">
         <div class="">
             <a href="{{ route('home') }}" rel="home">
-                <img src="https://photos.smugmug.com/photos/i-VKnSVxZ/0/X2/i-VKnSVxZ-X2.png" class="h-16">
+                <img src="{{ asset('storage/images/logo.png') }}" class="h-16">
             </a>
         </div>
         <div class="w-full md:w-auto md:flex-grow md:flex md:items-center">

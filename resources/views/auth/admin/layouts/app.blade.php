@@ -29,7 +29,7 @@
 
         <!-- Logo -->
         <div class="bg-gray-800 flex items-center justify-center" style="height: 65px;">
-            <img src="https://photos.smugmug.com/photos/i-VKnSVxZ/0/X2/i-VKnSVxZ-X2.png" class="h-12">
+            <img src="{{ asset('storage/images/logo.png') }}" class="h-12">
         </div>
 
         @include('auth.admin.partials.menu')

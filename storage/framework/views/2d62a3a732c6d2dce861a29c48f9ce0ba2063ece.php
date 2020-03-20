@@ -29,7 +29,7 @@
 
         <!-- Logo -->
         <div class="bg-gray-800 flex items-center justify-center" style="height: 65px;">
-            <img src="https://photos.smugmug.com/photos/i-VKnSVxZ/0/X2/i-VKnSVxZ-X2.png" class="h-12">
+            <img src="<?php echo e(asset('storage/images/logo.png')); ?>" class="h-12">
         </div>
 
         <?php echo $__env->make('auth.admin.partials.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
