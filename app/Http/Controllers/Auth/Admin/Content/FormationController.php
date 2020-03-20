@@ -16,12 +16,22 @@ class FormationController extends Controller
         $this->middleware('admin');
     }
 
+    /**
+     * Liste de toutes les formations sur la page admin
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $formations = DB::table('formations')->orderByDesc('created_at')->paginate(5);
         return view('auth.admin.formations.index', compact('formations'));
     }
 
+    /**
+     * Créer une formation
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $categories = CategoryFormation::all();
@@ -30,6 +40,12 @@ class FormationController extends Controller
         //TODO: Ajouter le bouton "ajouter une formation" dans la vue
     }
 
+    /**
+     * Page pour éditer une formation
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id)
     {
         $categories = CategoryFormation::all();
@@ -37,6 +53,12 @@ class FormationController extends Controller
         return view('auth.admin.formations.edit', compact('formation', 'categories'));
     }
 
+    /**
+     * Sauvegarde la formation
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $formation = new Formation();
@@ -56,6 +78,14 @@ class FormationController extends Controller
         return redirect()->route('manage.content.index.formation.admin');
     }
 
+    /**
+     * Modification d'une formation
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param                          $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
     public function update(Request $request, $id)
     {
         $formation = Formation::find($id);
@@ -75,6 +105,12 @@ class FormationController extends Controller
         return redirect()->route('manage.content.index.formation.admin');
     }
 
+    /**
+     * Suppression d'une formation
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $formation = Formation::find($id);
