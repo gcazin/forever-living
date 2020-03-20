@@ -13,8 +13,8 @@
                 <textarea type="text" name="description" id="description">{{ $home_content->description }}</textarea>
             </div>
             <div class="form-group">
-                <label for="file">Contenu à uploader</label>
-                <input type="file" name="file" id="file">
+                <label for="link">ID de la vidéo <span class="text-lowercase">(ex: https://www.youtube.com/watch?v=<span class="text-blue-500">S4CiuStdSc8</span>)</span></label>
+                <input type="text" name="link" id="link">
             </div>
             <div class="form-group text-right">
                 <button type="submit" class="btn btn-blue">Publier</button>

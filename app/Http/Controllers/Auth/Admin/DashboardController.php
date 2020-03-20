@@ -43,12 +43,6 @@ class DashboardController extends Controller
             $detail = json_decode($detail);
         }
 
-        /*$notification_id = $data['notification'][0];
-
-        $notification = Notification::where('id', substr($notification_id, 0, 4))->get();
-
-        dd($notification_id);*/
-
         //Vérification que l'utilisateur existe
         if(User::where('fbo_number', $detail->fbo_number)->exists()) {
             //Création du password en clear
