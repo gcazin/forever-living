@@ -21,7 +21,7 @@
                         <label class="dropdown">
                             <div class="cursor-pointer btn btn-primary">
                                 {{ auth()->check()
-                                    ? 'MyAllonsY'
+                                    ? 'MyAllonsi'
                                     : 'Session ('.session()->get('passcode').')'
                             }}
                             </div>
